@@ -7,11 +7,13 @@ from rdkit import Chem
 from rdkit.Chem import AllChem, Draw
 from padelpy import padeldescriptor
 
+# Page configuration
 st.set_page_config(
   page_title='PARP1pred',
   page_icon='💊',
   initial_sidebar_state='expanded')
 
+# Session state
 if 'smiles_input' not in st.session_state:
   st.session_state.smiles_input = ''
 
