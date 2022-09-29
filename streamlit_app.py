@@ -4,7 +4,6 @@ import pickle
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem
-from stmol import speck_plot
 from padelpy import padeldescriptor
 
 st.set_page_config(
@@ -44,7 +43,7 @@ smiles_txt = st.sidebar.text_input('Enter SMILES notation', st.session_state.smi
 st.sidebar.button('Example input', on_click=insert_example_smiles)
 st.sidebar.button('Clear input', on_click=clear_smiles)
 
-
+# Default page (loading for the first time)
 if st.session_state.smiles_input == '':
   st.subheader('Welcome to the app!')
   st.info('Enter SMILES notation in the sidebar to proceed', icon='👈')
@@ -52,6 +51,7 @@ else:
   st.subheader('⚛️ Input molecule:')
   st.info(smiles_txt)
 
+# Input SMILES saved to file
 f = open('molecule.smi', 'w')
 f.write(f'{smiles_txt}\tmol_001')
 f.close()
@@ -90,8 +90,8 @@ if st.session_state.smiles_input != '':
   st.write('**Subset of descriptor (used in trained model)**')
   st.write(query_desc_2)
 
+  
 # Read in saved classification model
-
 if st.session_state.smiles_input != '':
   st.subheader('🤖 Predictions')
   pred = int(model.predict(query_desc_2))
@@ -100,5 +100,3 @@ if st.session_state.smiles_input != '':
   if pred == 1:
     st.success('Active')
   
-  #importances = pd.Series(model.feature_importances_)
-  #st.write(importances)
