@@ -90,6 +90,7 @@ if st.session_state.smiles_input != '':
   descriptors.drop('Name', axis=1, inplace=True)
   st.write('**Full set of descriptors (calculated for query molecule)**')
   st.write(descriptors)
+  st.write(descriptors.shape)
   
 
 # Load descriptor subset used in trained model
@@ -102,6 +103,7 @@ if st.session_state.smiles_input != '':
 
   st.write('**Subset of descriptor (used in trained model)**')
   st.write(query_desc_2)
+  st.write(query_desc_2.shape)
 
   
 # Read in saved classification model
