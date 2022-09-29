@@ -96,7 +96,6 @@ st.write(query_desc_2)
 st.subheader('🤖 Predictions')
 if st.session_state.smiles_input != '':
   pred = int(model.predict(query_desc_2))
-  st.write(pred)
   if pred == 0:
     st.error('Inactive')
   if pred == 1:
