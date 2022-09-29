@@ -53,8 +53,8 @@ else:
   st.info(smiles_txt)
   
   smi = Chem.MolFromSmiles(smiles_txt)
-  Chem.Draw.MolToFile(smi, 'molecule.png', size=(500,500))
-  mol_image = Image.open('molecule.png')
+  Chem.Draw.MolToFile(smi, 'molecule.svg', size=(500,500))
+  mol_image = Image.open('molecule.svg')
   st.image(mol_image)
 
 
