@@ -19,7 +19,7 @@ if 'smiles_input' not in st.session_state:
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-st.title('💊 QSAR app')
+st.sidebar.title('💊 QSAR app')
 
 with st.expander('About this app'):
   st.write('''
