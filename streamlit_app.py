@@ -50,7 +50,8 @@ if st.session_state.smiles_input == '':
 else:
   st.subheader('⚛️ Input molecule:')
   st.info(smiles_txt)
-  m = AllChem.Compute2DCoords(smiles_txt)
+  smi = Chem.MolFromSmiles(smiles_txt)
+  m = AllChem.Compute2DCoords(smi)
   Draw.MolToFile(m, 'molecule.png') 
   mol_image = Image.open('molecule.png')
   st.image(mol_image)
