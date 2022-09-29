@@ -74,6 +74,7 @@ if st.session_state.smiles_input != '':
 
   descriptors = pd.read_csv('descriptors.csv')
   descriptors.drop('Name', axis=1, inplace=True)
+  st.write('**Full set of descriptors (calculated for query molecule)**')
   st.write(descriptors)
   
 
@@ -85,6 +86,7 @@ query_desc_1 = descriptors.columns.difference(pubchem_subset.columns)
 query_desc_2 = descriptors.columns.difference(query_desc_1)
 
 query_desc_3 = descriptors.drop(query_desc_2, axis=1)
+st.write('**Subset of descriptor (used in trained model)**')
 st.write(query_desc_3)
 
 # Read in saved classification model
