@@ -95,8 +95,7 @@ st.write(query_desc_2)
 # Read in saved classification model
 st.subheader('🤖 Predictions')
 if st.session_state.smiles_input != '':
-  pred = int(model.predict(query_desc_2))
-  st.write(pred)
+  pred = str(model.predict(query_desc_2))
   if pred == '0':
     st.error('Inactive')
   if pred == '1':
