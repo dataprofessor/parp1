@@ -51,6 +51,7 @@ if st.session_state.smiles_input == '':
 else:
   st.subheader('⚛️ Input molecule:')
   st.info(smiles_txt)
+  
   smi = Chem.MolFromSmiles(smiles_txt)
   m = AllChem.Compute2DCoords(smi)
   Draw.MolToFile(m, 'molecule.png') 
@@ -90,7 +91,6 @@ if st.session_state.smiles_input != '':
   pubchem_subset = model.feature_names_in_
 
   query_desc_1 = descriptors.columns.difference(pubchem_subset)
-  #query_desc_2 = descriptors.columns.difference(query_desc_1)
   query_desc_2 = descriptors.drop(query_desc_1, axis=1)
 
   st.write('**Subset of descriptor (used in trained model)**')
