@@ -96,7 +96,10 @@ st.write(query_desc_2)
 st.subheader('🤖 Predictions')
 if st.session_state.smiles_input != '':
   pred = model.predict(query_desc_2)
-  st.info(pred)
+  if pred == '[0]':
+    st.error('Inactive')
+  else:
+    st.success('Active')
   
   #importances = pd.Series(model.feature_importances_)
   #st.write(importances)
