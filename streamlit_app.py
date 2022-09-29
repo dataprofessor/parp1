@@ -10,7 +10,6 @@ from padelpy import padeldescriptor
 st.set_page_config(
   page_title='PARP1',
   page_icon='💊',
-  layout='wide',
   initial_sidebar_state='expanded')
 
 if 'smiles_input' not in st.session_state:
