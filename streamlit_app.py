@@ -54,12 +54,10 @@ else:
   
   smi = Chem.MolFromSmiles(smiles_txt)
   m = AllChem.Compute2DCoords(smi)
-  mol_image = Chem.Draw.MolToImage
+  Chem.Draw.MolToImage(m, 'molecule.png')
+  mol_image = Image.open('molecule.png')
   st.image(mol_image)
-  
-  #Draw.MolToFile(m, 'molecule.png') 
-  #mol_image = Image.open('molecule.png')
-  #st.image(mol_image)
+
 
 # Input SMILES saved to file
 f = open('molecule.smi', 'w')
