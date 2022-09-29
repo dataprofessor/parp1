@@ -95,10 +95,8 @@ st.write(query_desc_3)
 # Read in saved classification model
 st.subheader('🤖 Predictions')
 if st.session_state.smiles_input != '':
-  #st.write(model.feature_names_in_)
-  
-  #pred = model.predict(query_desc_3)
-  #st.info(pred)
+  pred = model.predict(query_desc_3)
+  st.info(pred)
   
   #importances = pd.Series(model.feature_importances_)
   #st.write(importances)
