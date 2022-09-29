@@ -79,6 +79,7 @@ if st.session_state.smiles_input != '':
 
 # Load descriptor subset used in trained model
 pubchem = pd.read_csv('data/PubChem_removed_low_variance_0.1_2class_chemblID.csv')
+pubchem = pubchem.drop(['molecule_chembl_id', 'class'], axis=1)
 st.write(pubchem)
   
 # Read in saved classification model
