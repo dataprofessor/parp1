@@ -53,8 +53,7 @@ else:
   st.info(smiles_txt)
   
   smi = Chem.MolFromSmiles(smiles_txt)
-  m = AllChem.Compute2DCoords(smi)
-  Chem.Draw.MolToImage(m, 'molecule.png')
+  Chem.Draw.MolToImage(smi, 'molecule.png')
   mol_image = Image.open('molecule.png')
   st.image(mol_image)
 
