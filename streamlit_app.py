@@ -86,9 +86,9 @@ model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl',
 pubchem_subset = model.feature_names_in_
 
 query_desc_1 = descriptors.columns.difference(pubchem_subset)
-query_desc_2 = descriptors.columns.difference(query_desc_1)
+#query_desc_2 = descriptors.columns.difference(query_desc_1)
+query_desc_2 = descriptors.drop(query_desc_1, axis=1)
 
-#query_desc_3 = descriptors.drop(query_desc_2, axis=1)
 st.write('**Subset of descriptor (used in trained model)**')
 st.write(query_desc_2)
 
