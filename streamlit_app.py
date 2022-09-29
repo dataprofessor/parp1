@@ -8,7 +8,7 @@ from stmol import speck_plot
 from padelpy import padeldescriptor
 
 st.set_page_config(
-  page_title='BioAct',
+  page_title='QSAR',
   page_icon='💊',
   layout='wide',
   initial_sidebar_state='collapsed')
@@ -19,7 +19,7 @@ if 'smiles_input' not in st.session_state:
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-st.title('💊 BioAct: A BioActivity prediction app')
+st.title('💊 QSAR app')
 
 with st.expander('About this app'):
   st.write('''
