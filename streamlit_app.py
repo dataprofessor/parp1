@@ -21,8 +21,8 @@ if os.path.isfile('molecule.smi'):
   
 st.sidebar.title('💊 QSAR app')
 
-with st.expander('About this app'):
-  st.write('''
+with st.sidebar.expander('About this app'):
+  st.sidebar.write('''
     This QSAR app allow users to predict the biological activity of a query molecule against the target protein being investigated.
     
     This app is based on the following Python libraries:
