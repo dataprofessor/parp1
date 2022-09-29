@@ -52,10 +52,10 @@ else:
   st.subheader('⚛️ Input molecule:')
   st.info(smiles_txt)
   
-  smi = Chem.MolFromSmiles(smiles_txt)
-  Chem.Draw.MolToFile(smi, 'molecule.png')
-  mol_image = Image.open('molecule.png')
-  st.image(mol_image)
+  #smi = Chem.MolFromSmiles(smiles_txt)
+  #Chem.Draw.MolToFile(smi, 'molecule.png')
+  #mol_image = Image.open('molecule.png')
+  #st.image(mol_image)
 
 
 # Input SMILES saved to file
