@@ -55,7 +55,14 @@ else:
   smi = Chem.MolFromSmiles(smiles_txt)
   Chem.Draw.MolToFile(smi, 'molecule.png')
   mol_image = Image.open('molecule.png')
-  st.image(mol_image)
+  
+  col1, col2, col3 = st.columns(3)
+  with col1:
+    st.write(' ')
+  with col2:
+      st.image(mol_image)
+  with col3:
+      st.write(' ')
 
 
 # Input SMILES saved to file
