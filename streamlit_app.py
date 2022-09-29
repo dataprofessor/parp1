@@ -10,7 +10,7 @@ st.set_page_config(
   page_title='QSAR',
   page_icon='💊',
   layout='wide',
-  initial_sidebar_state='wide')
+  initial_sidebar_state='expanded')
 
 if 'smiles_input' not in st.session_state:
   st.session_state.smiles_input = ''
