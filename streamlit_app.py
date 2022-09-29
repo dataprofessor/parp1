@@ -8,7 +8,7 @@ from rdkit.Chem import AllChem, Draw
 from padelpy import padeldescriptor
 
 st.set_page_config(
-  page_title='QSAR',
+  page_title='PARP1',
   page_icon='💊',
   layout='wide',
   initial_sidebar_state='expanded')
@@ -19,7 +19,7 @@ if 'smiles_input' not in st.session_state:
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-st.sidebar.title('💊 QSAR app')
+st.sidebar.title('💊 PARP1 bioactivity prediction')
 
 with st.expander('About this app'):
   st.write('''
