@@ -8,7 +8,7 @@ from rdkit.Chem import AllChem, Draw
 from padelpy import padeldescriptor
 
 st.set_page_config(
-  page_title='PARP1',
+  page_title='PARP1pred',
   page_icon='💊',
   initial_sidebar_state='expanded')
 
@@ -18,7 +18,7 @@ if 'smiles_input' not in st.session_state:
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-st.sidebar.title('💊 PARP1 bioactivity prediction')
+st.sidebar.title('💊 PARP1pred')
 
 
 # Input SMILES
@@ -40,7 +40,7 @@ if st.session_state.smiles_input == '':
   
   with st.expander('About this app'):
     st.write('''
-      This QSAR app allow users to predict the biological activity of a query molecule against the target protein being investigated.
+      PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.
 
       This app is based on the following Python libraries:
       - `streamlit`
