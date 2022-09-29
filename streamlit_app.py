@@ -90,7 +90,10 @@ st.write('**Subset of descriptor (used in trained model)**')
 st.write(query_desc_3)
 
 # Read in saved classification model
+st.subheader('🤖 Predictions')
 if st.session_state.smiles_input != '':
   model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
+  pred = model.predict(query_desc_3)
+  st.info(pred)
   #importances = pd.Series(model.feature_importances_)
   #st.write(importances)
