@@ -84,8 +84,9 @@ pubchem_subset = pubchem.drop(['molecule_chembl_id', 'class'], axis=1)
 query_desc_1 = descriptors.columns.difference(pubchem_subset.columns)
 query_desc_2 = descriptors.columns.difference(query_desc_1)
 
-st.write(query_desc_2)
-  
+query_desc_3 = descriptors.drop(query_desc_2, axis=1)
+st.write(query_desc_3)
+
 # Read in saved classification model
 if st.session_state.smiles_input != '':
   model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
