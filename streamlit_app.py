@@ -76,7 +76,11 @@ if st.session_state.smiles_input != '':
   descriptors.drop('Name', axis=1, inplace=True)
   st.write(descriptors)
   
- 
+
+# Load descriptor subset used in trained model
+pubchem = pd.read_csv('data/PubChem_removed_low_variance_0.1_2class_chemblID.csv')
+st.write(pubchem)
+  
 # Read in saved classification model
 if st.session_state.smiles_input != '':
   model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
