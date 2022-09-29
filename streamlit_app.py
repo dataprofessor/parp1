@@ -23,7 +23,7 @@ st.title('💊 QSAR app')
 
 with st.expander('About this app'):
   st.write('''
-    This Biological Activity (**BioAct**) prediction app allow users to easily evaluate the putative biological activity of a query molecule against the target protein being investigated.
+    This QSAR app allow users to predict the biological activity of a query molecule against the target protein being investigated.
     
     This app is based on the following Python libraries:
     - `streamlit`
