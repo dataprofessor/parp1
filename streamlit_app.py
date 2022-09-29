@@ -37,6 +37,7 @@ st.sidebar.button('Clear input', on_click=clear_smiles)
 
 # Default page (loading for the first time)
 if st.session_state.smiles_input == '':
+  st.subheader('Welcome to the app!')
   
   with st.expander('About this app'):
     st.write('''
@@ -49,8 +50,8 @@ if st.session_state.smiles_input == '':
       - `padelpy`
       ''')
   
-  st.subheader('Welcome to the app!')
   st.info('Enter SMILES notation in the sidebar to proceed', icon='👈')
+  
 else:
   st.subheader('⚛️ Input molecule:')
   st.info(smiles_txt)
