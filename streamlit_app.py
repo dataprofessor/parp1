@@ -5,7 +5,6 @@ import pandas as pd
 from PIL import Image
 from rdkit import Chem
 from rdkit.Chem import AllChem, Draw
-from rdkit.Chem.Draw import rdMolDraw2D
 from padelpy import padeldescriptor
 
 st.set_page_config(
@@ -56,7 +55,7 @@ else:
   smi = Chem.MolFromSmiles(smiles_txt)
   Chem.Draw.MolToFile(smi, 'molecule.png')
   mol_image = Image.open('molecule.png')
-
+  st.image(mol_image)
 
 
 # Input SMILES saved to file
