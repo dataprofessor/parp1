@@ -21,16 +21,6 @@ if os.path.isfile('molecule.smi'):
   
 st.sidebar.title('💊 PARP1 bioactivity prediction')
 
-with st.expander('About this app'):
-  st.write('''
-    This QSAR app allow users to predict the biological activity of a query molecule against the target protein being investigated.
-    
-    This app is based on the following Python libraries:
-    - `streamlit`
-    - `pandas`
-    - `rdkit`
-    - `padelpy`
-    ''')
 
 # Input SMILES
 st.sidebar.subheader('Input molecule')
@@ -44,8 +34,21 @@ smiles_txt = st.sidebar.text_input('Enter SMILES notation', st.session_state.smi
 st.sidebar.button('Example input', on_click=insert_example_smiles)
 st.sidebar.button('Clear input', on_click=clear_smiles)
 
+
 # Default page (loading for the first time)
 if st.session_state.smiles_input == '':
+  
+  with st.expander('About this app'):
+  st.write('''
+    This QSAR app allow users to predict the biological activity of a query molecule against the target protein being investigated.
+    
+    This app is based on the following Python libraries:
+    - `streamlit`
+    - `pandas`
+    - `rdkit`
+    - `padelpy`
+    ''')
+  
   st.subheader('Welcome to the app!')
   st.info('Enter SMILES notation in the sidebar to proceed', icon='👈')
 else:
