@@ -29,7 +29,6 @@ with st.expander('About this app'):
     - `streamlit`
     - `pandas`
     - `rdkit`
-    - `stmol`
     - `padelpy`
     ''')
 
@@ -56,27 +55,6 @@ else:
 f = open('molecule.smi', 'w')
 f.write(f'{smiles_txt}\tmol_001')
 f.close()
-
-# Show molecule
-if st.session_state.smiles_input != '':
-  m = Chem.MolFromSmiles(smiles_txt)
-  m2 = Chem.AddHs(m)
-  AllChem.EmbedMolecule(m2,randomSeed=0xf00d)
-  AllChem.MMFFOptimizeMolecule(m2)
-  m3 = Chem.MolToXYZBlock(m2)
-  Chem.MolToXYZFile(m2, 'molecule.xyz')
-
-  mol_col1, mol_col2 = st.columns(2)
-  
-  with mol_col2:
-    with st.expander('Show XYZ file content'):
-      st.code(m3)
-
-  with mol_col1:
-    with st.expander('Show molecular structure via stmol'):
-      f2 = open('molecule.xyz', 'r')
-      molecule_xyz = f2.read()
-      speck_plot(molecule_xyz, wbox_width='350px', wbox_height='600px')
 
 
 # Compute PADEL descriptors
