@@ -85,7 +85,7 @@ if st.session_state.smiles_input != '':
 model = pickle.load(open('data/oversampling_PubChem_RandomForestClassifier.pkl', 'rb'))
 pubchem_subset = model.feature_names_in_
 
-query_desc_1 = descriptors.columns.difference(pubchem_subset.columns)
+query_desc_1 = descriptors.columns.difference(pubchem_subset)
 query_desc_2 = descriptors.columns.difference(query_desc_1)
 
 query_desc_3 = descriptors.drop(query_desc_2, axis=1)
@@ -95,10 +95,10 @@ st.write(query_desc_3)
 # Read in saved classification model
 st.subheader('🤖 Predictions')
 if st.session_state.smiles_input != '':
-  st.write(model.feature_names_in_)
+  #st.write(model.feature_names_in_)
   
-  pred = model.predict(query_desc_3)
-  st.info(pred)
+  #pred = model.predict(query_desc_3)
+  #st.info(pred)
   
   #importances = pd.Series(model.feature_importances_)
   #st.write(importances)
