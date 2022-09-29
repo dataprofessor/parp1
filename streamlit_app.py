@@ -2,8 +2,8 @@ import streamlit as st
 import os
 import pickle
 import pandas as pd
-from rdkit import Chem
-from rdkit.Chem import AllChem
+from PIL import Image
+from rdkit.Chem import AllChem, Draw
 from padelpy import padeldescriptor
 
 st.set_page_config(
@@ -50,6 +50,10 @@ if st.session_state.smiles_input == '':
 else:
   st.subheader('⚛️ Input molecule:')
   st.info(smiles_txt)
+  m = AllChem.Compute2DCoords(smiles_txt)
+  Draw.MolToFile(m, 'molecule.png') 
+  mol_image = Image.open('molecule.png')
+  st.image(mol_image)
 
 # Input SMILES saved to file
 f = open('molecule.smi', 'w')
