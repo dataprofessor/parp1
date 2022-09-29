@@ -95,11 +95,11 @@ st.write(query_desc_2)
 # Read in saved classification model
 st.subheader('🤖 Predictions')
 if st.session_state.smiles_input != '':
-  pred = str(model.predict(query_desc_2))
+  pred = int(model.predict(query_desc_2))
   st.write(pred)
-  if pred == '0':
+  if pred == 0:
     st.error('Inactive')
-  if pred == '1':
+  if pred == 1:
     st.success('Active')
   
   #importances = pd.Series(model.feature_importances_)
