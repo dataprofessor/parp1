@@ -63,7 +63,7 @@ else:
   Chem.Draw.MolToFile(smi, 'molecule.png')
   mol_image = Image.open('molecule.png')
   
-  col1, col2, col3 = st.columns((1,3,1))
+  col1, col2, col3 = st.columns((1,6,1))
   with col1:
     st.write(' ')
   with col2:
