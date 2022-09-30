@@ -55,14 +55,16 @@ if st.session_state.smiles_input == '':
   
 else:
   st.subheader('⚛️ Input molecule:')
-  st.write('**SMILES**')
-  st.text(smiles_txt)
+  with st.expander('Show SMILES'):
+    #st.write('**SMILES**')
+    st.text(smiles_txt)
   
-  st.write('**Chemical structure**')
-  smi = Chem.MolFromSmiles(smiles_txt)
-  Chem.Draw.MolToFile(smi, 'molecule.png', width=900)
-  mol_image = Image.open('molecule.png')
-  st.image(mol_image)
+  with st.expander('Show chemical structures'):
+    #st.write('**Chemical structure**')
+    smi = Chem.MolFromSmiles(smiles_txt)
+    Chem.Draw.MolToFile(smi, 'molecule.png', width=900)
+    mol_image = Image.open('molecule.png')
+    st.image(mol_image)
 
 # Input SMILES saved to file
 f = open('molecule.smi', 'w')
