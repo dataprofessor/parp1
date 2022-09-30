@@ -55,9 +55,10 @@ if st.session_state.smiles_input == '':
   
 else:
   st.subheader('⚛️ Input molecule:')
-  st.info(smiles_txt)
+  st.write('**SMILES**')
   st.text(smiles_txt)
   
+  st.write('**Chemical structure**')
   smi = Chem.MolFromSmiles(smiles_txt)
   Chem.Draw.MolToFile(smi, 'molecule.png')
   mol_image = Image.open('molecule.png')
