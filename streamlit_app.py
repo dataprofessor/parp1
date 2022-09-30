@@ -87,9 +87,11 @@ if st.session_state.smiles_input != '':
 
   descriptors = pd.read_csv('descriptors.csv')
   descriptors.drop('Name', axis=1, inplace=True)
-  st.write('**Full set of descriptors (calculated for query molecule)**')
-  st.write(descriptors)
-  st.write(descriptors.shape)
+  
+  with st.expander('Show full set of descriptors (as calculated for query molecule)'):
+    #st.write('**Full set of descriptors (calculated for query molecule)**')
+    st.write(descriptors)
+    st.write(descriptors.shape)
   
 
 # Load descriptor subset used in trained model
@@ -100,9 +102,10 @@ if st.session_state.smiles_input != '':
   query_desc_1 = descriptors.columns.difference(pubchem_subset)
   query_desc_2 = descriptors.drop(query_desc_1, axis=1)
 
-  st.write('**Subset of descriptor (used in trained model)**')
-  st.write(query_desc_2)
-  st.write(query_desc_2.shape)
+  with st.expander('Show subset of descriptors (as used in trained model)'):
+    #st.write('**Subset of descriptors (used in trained model)**')
+    st.write(query_desc_2)
+    st.write(query_desc_2.shape)
 
   
 # Read in saved classification model
