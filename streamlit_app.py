@@ -60,7 +60,7 @@ else:
   
   st.write('**Chemical structure**')
   smi = Chem.MolFromSmiles(smiles_txt)
-  Chem.Draw.MolToFile(smi, 'molecule.png', width=600)
+  Chem.Draw.MolToFile(smi, 'molecule.png', width=900)
   mol_image = Image.open('molecule.png')
   st.image(mol_image)
 
