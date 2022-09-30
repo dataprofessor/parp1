@@ -27,7 +27,7 @@ st.sidebar.title('💊 PARP1pred')
 st.sidebar.subheader('Input molecule')
 
 def insert_example_smiles():
-    st.session_state.smiles_input = 'CC(=O)OC1=CC=CC=C1C(=O)O'
+    st.session_state.smiles_input = 'O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1'
 def clear_smiles():
     st.session_state.smiles_input = ''
 
