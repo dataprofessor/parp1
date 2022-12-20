@@ -25,7 +25,7 @@ st.sidebar.title('💊 PARP1pred')
 
 # Input SMILES
 st.sidebar.subheader('Input molecule')
-with st.expander('About this app'):
+with st.sidebar.expander('About this app'):
   st.write('''
     This app is based on the following Python libraries:
     - `streamlit`
