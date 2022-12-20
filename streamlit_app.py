@@ -25,6 +25,14 @@ st.sidebar.title('💊 PARP1pred')
 
 # Input SMILES
 st.sidebar.subheader('Input molecule')
+with st.expander('About this app'):
+  st.write('''
+    This app is based on the following Python libraries:
+    - `streamlit`
+    - `pandas`
+    - `rdkit`
+    - `padelpy`
+    ''')
 
 def insert_example_smiles():
     st.session_state.smiles_input = 'O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1'
@@ -42,16 +50,7 @@ if st.session_state.smiles_input == '':
   
   st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
   
-  with st.expander('About this app'):
-    st.write('''
-      This app is based on the following Python libraries:
-      - `streamlit`
-      - `pandas`
-      - `rdkit`
-      - `padelpy`
-      ''')
-  
-  st.info('Enter SMILES notation in the sidebar to proceed', icon='👈')
+  st.warning('Enter SMILES notation in the sidebar to proceed', icon='👈')
   
 else:
   st.subheader('⚛️ Input molecule:')
