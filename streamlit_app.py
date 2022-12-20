@@ -38,7 +38,8 @@ st.sidebar.button('Clear input', on_click=clear_smiles)
 # Default page (loading for the first time)
 if st.session_state.smiles_input == '':
   st.subheader('Welcome to the PARP1pred app!')
-  
+  coverimage = Image.open('PARP1pred.jpg')
+  st.image(coverimage)
   st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
   
   st.warning('Enter SMILES notation in the sidebar to proceed', icon='👈')
