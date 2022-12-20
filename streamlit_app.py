@@ -43,8 +43,8 @@ if st.session_state.smiles_input == '':
   
   st.warning('Enter SMILES notation in the sidebar to proceed', icon='👈')
   
-  with st.expander('About this app'):
-  st.write('''
+  #with st.expander('About this app'):
+  st.markdown('''
     ### What is PARP1 and its therapeutic importance
     Poly (ADP-ribose) polymerase-1 (PARP-1) is an enzyme that catalyzes the ADP-ribosylation of a specific protein and plays a vital role in DNA repair. It has become an attractive target as inhibition of PARP-1 causes a toxic accumulation of DNA double strand breaks in cancer cells, particularly those with BRCA1/2 deficiency, which are found in breast, ovarian, prostate, and pancreatic cancers.
     
