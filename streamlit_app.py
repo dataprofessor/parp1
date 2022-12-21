@@ -26,23 +26,19 @@ def insert_example_smiles():
 def clear_smiles():
     st.session_state.smiles_input = ''
 
-    
+# The App    
 st.title('💊 PARP1pred app')
 
-# Contents
-
-#st.subheader('Welcome to the PARP1pred app!')
- 
 tab1,tab2,tab3,tab4,tab5,tab6,tab7 = st.tabs(['Main', 'About', 'What is PARP1?', 'Dataset', 'Model performance', 'Python libraries', 'Citing us'])
   
 with tab1:
   if st.session_state.smiles_input == '':
     st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
-    st.header('Enter SMILES notation')
+    st.subheader('Enter SMILES notation')
     smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
     st.session_state.smiles_input = smiles_txt
     st.button('Example input', on_click=insert_example_smiles)
-    st.button('Clear input', on_click=clear_smiles)
+
   else:
     st.subheader('⚛️ Input molecule:')
     with st.expander('Show SMILES', expanded=True):
@@ -133,14 +129,4 @@ with tab6:
   ''')
 with tab7:
   st.markdown('T. Lerksuthirat, S. Chitphuk, W. Stitchantrakul, D. Dejsuphong, A.A. Malik, C. Nantasenamat, PARP1PRED: A web server for screening the bioactivity of inhibitors against DNA repair enzyme PARP-1, ***EXCLI Journal*** (2023) DOI: https://doi.org/10.17179/excli2022-5602.')
-  
-  
-
-  
-
-  
-
-
-
-
 
