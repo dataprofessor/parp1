@@ -30,7 +30,9 @@ def clear_smiles():
 st.title('💊 PARP1pred app')
 
 tab1,tab2,tab3,tab4,tab5,tab6,tab7 = st.tabs(['Main', 'About', 'What is PARP1?', 'Dataset', 'Model performance', 'Python libraries', 'Citing us'])
-  
+
+st.button('Example input', on_click=insert_example_smiles)
+
 with tab1:
   if st.session_state.smiles_input == '':
     
@@ -43,7 +45,7 @@ with tab1:
       #st.button('Example input', on_click=insert_example_smiles)
       submit_button = st.form_submit_button('Submit')
 
-      st.button('Example input', on_click=insert_example_smiles)
+      
       
       if submit_button:
         st.subheader('⚛️ Input molecule:')
