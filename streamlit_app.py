@@ -32,12 +32,12 @@ st.title('💊 PARP1pred app')
 # Contents
 
 #st.subheader('Welcome to the PARP1pred app!')
-st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
-  
+ 
 tab1,tab2,tab3,tab4,tab5,tab6,tab7 = st.tabs(['Main', 'About', 'What is PARP1 and its importance', 'Dataset', 'Model performance', 'Python libraries', 'Citing us'])
   
 with tab1:
   if st.session_state.smiles_input == '':
+    st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
     st.header('Enter SMILES notation')
     smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
     st.button('Example input', on_click=insert_example_smiles)
