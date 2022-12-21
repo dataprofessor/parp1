@@ -40,13 +40,14 @@ with tab1:
     st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
     st.header('Enter SMILES notation')
     smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
+    st.session_state.smiles_input = smiles_txt
     st.button('Example input', on_click=insert_example_smiles)
     st.button('Clear input', on_click=clear_smiles)
   else:
     st.subheader('⚛️ Input molecule:')
     with st.expander('Show SMILES'):
       #st.write('**SMILES**')
-      st.text(smiles_txt)
+      st.text(st.session_state.smiles_input)
       
     with st.expander('Show chemical structures'):
       #st.write('**Chemical structure**')
