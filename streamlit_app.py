@@ -126,7 +126,7 @@ with tab4:
     ''')
 with tab5:
   st.header('Model performance')
-  st.write('We selected PubChem as a molecular fingerprint and used a random forest with an oversampling approach to construct the best model. The Matthews correlation coefficients in training, cross-validation, and test sets were 1.00, 0.96, and 0.74, respectively.')
+  st.write('We selected PubChem as a molecular fingerprint and used a random forest with an oversampling approach to construct the best model. The Matthews correlation coefficients for training, cross-validation, and test sets were 1.00, 0.96, and 0.74, respectively.')
 with tab6:
   st.header('Python libraries')
   st.markdown('''
