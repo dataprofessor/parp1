@@ -29,15 +29,12 @@ def clear_smiles():
     
 st.title('💊 PARP1pred app')
 
-coverimage = Image.open('PARP1pred.jpg')
-st.image(coverimage)
-
 # Contents
 
-st.subheader('Welcome to the PARP1pred app!')
+#st.subheader('Welcome to the PARP1pred app!')
 st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
   
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(['Main', 'What is PARP1 and its importance', 'Dataset', 'Model performance', 'Python libraries', 'Citing us'])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(['Main', 'About', 'What is PARP1 and its importance', 'Dataset', 'Model performance', 'Python libraries', 'Citing us'])
   
 with tab1:
   if st.session_state.smiles_input == '':
@@ -111,17 +108,19 @@ with tab1:
     if pred == 1:
       st.success('Active')
       
-
 with tab2:
+  coverimage = Image.open('PARP1pred.jpg')
+  st.image(coverimage)
+with tab3:
   st.header('What is PARP1 and its therapeutic importance')
   st.write('Poly (ADP-ribose) polymerase-1 (PARP-1) is an enzyme that catalyzes the ADP-ribosylation of a specific protein and plays a vital role in DNA repair. It has become an attractive target as inhibition of PARP-1 causes a toxic accumulation of DNA double strand breaks in cancer cells, particularly those with BRCA1/2 deficiency, which are found in breast, ovarian, prostate, and pancreatic cancers.')
-with tab3:
+with tab4:
   st.header('Dataset')
   st.write('In our work, we retrieved a human PARP-1 biological dataset from the ChEMBL database. The data was curated, and we received a non-redundant set of 2,018 PARP-1 inhibitors, which were divided into 1,720 active and 298 inactive compounds.')
-with tab4:
+with tab5:
   st.header('Model performance')
   st.write('We selected PubChem as a molecular fingerprint and used a random forest with an oversampling approach to construct the best model. The Matthews correlation coefficients in training, cross-validation, and test sets were 1.00, 0.96, and 0.74, respectively.')
-with tab5:
+with tab6:
   st.header('Python libraries')
   st.markdown('''
     This app is based on the following Python libraries:
