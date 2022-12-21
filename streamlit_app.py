@@ -15,7 +15,7 @@ st.set_page_config(
 
 # Session state
 if 'smiles_input' not in st.session_state:
-  st.session_state.smiles_input = 'O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1'
+  st.session_state.smiles_input = ''
 
 # Utilities
 if os.path.isfile('molecule.smi'):
