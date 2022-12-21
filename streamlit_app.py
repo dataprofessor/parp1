@@ -51,14 +51,14 @@ with tab1:
       
     with st.expander('Show chemical structures'):
       #st.write('**Chemical structure**')
-      smi = Chem.MolFromSmiles(smiles_txt)
+      smi = Chem.MolFromSmiles(st.session_state.smiles_input)
       Chem.Draw.MolToFile(smi, 'molecule.png', width=900)
       mol_image = Image.open('molecule.png')
       st.image(mol_image)
 
   # Input SMILES saved to file
   f = open('molecule.smi', 'w')
-  f.write(f'{smiles_txt}\tmol_001')
+  f.write(f'{st.session_state.smiles_input}\tmol_001')
   f.close()
 
 
