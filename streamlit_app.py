@@ -43,6 +43,7 @@ with tab1:
       smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
       st.session_state.smiles_input = smiles_txt
       #st.button('Example input', on_click=insert_example_smiles)
+      st.code('O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1')
       submit_button = st.form_submit_button('Submit')
 
       
