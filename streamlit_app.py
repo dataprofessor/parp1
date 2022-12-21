@@ -108,6 +108,7 @@ with tab1:
       st.error('Inactive')
     if pred == 1:
       st.success('Active')
+    st.button('Restart', on_click=clear_smiles)
       
 with tab2:
   coverimage = Image.open('PARP1pred.jpg')
