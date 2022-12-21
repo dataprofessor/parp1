@@ -38,8 +38,9 @@ with tab1:
     smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
     st.session_state.smiles_input = smiles_txt
     st.button('Example input', on_click=insert_example_smiles)
+    submitted = st.form_submit_button('Submit')
 
-  else:
+  if submitted:
     st.subheader('⚛️ Input molecule:')
     with st.expander('Show SMILES', expanded=True):
       #st.write('**SMILES**')
