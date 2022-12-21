@@ -20,10 +20,10 @@ if 'smiles_input' not in st.session_state:
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-st.sidebar.title('💊 PARP1pred')
+st.title('💊 PARP1pred')
 
 # Input SMILES
-st.sidebar.subheader('Input molecule')
+st.subheader('Input molecule')
 
 def insert_example_smiles():
     st.session_state.smiles_input = 'O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1'
