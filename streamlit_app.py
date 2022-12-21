@@ -44,8 +44,8 @@ with tab1:
     st.button('Example input', on_click=insert_example_smiles)
     st.button('Clear input', on_click=clear_smiles)
   else:
-    st.subheader('⚛️ Input molecule:', expanded=True)
-    with st.expander('Show SMILES'):
+    st.subheader('⚛️ Input molecule:')
+    with st.expander('Show SMILES', expanded=True):
       #st.write('**SMILES**')
       st.text(st.session_state.smiles_input)
       
