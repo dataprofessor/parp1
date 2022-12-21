@@ -43,6 +43,8 @@ with tab1:
       #st.button('Example input', on_click=insert_example_smiles)
       submit_button = st.form_submit_button('Submit')
 
+      st.button('Example input', on_click=insert_example_smiles)
+      
       if submit_button:
         st.subheader('⚛️ Input molecule:')
         with st.expander('Show SMILES', expanded=True):
