@@ -38,13 +38,12 @@ with tab1:
       st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
       st.subheader('Enter SMILES notation')
 
-
       smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
       st.session_state.smiles_input = smiles_txt
       st.button('Example input', on_click=insert_example_smiles)
-      submitted = st.form_submit_button('Submit')
+      submit_button = st.form_submit_button('Submit')
 
-      if submitted:
+      if submit_button:
         st.subheader('⚛️ Input molecule:')
         with st.expander('Show SMILES', expanded=True):
           #st.write('**SMILES**')
