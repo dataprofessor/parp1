@@ -56,13 +56,13 @@ if st.session_state.smiles_input == '':
   with tab4:
     st.header('Python libraries')
     st.markdown('''
-    This app is based on the following Python libraries:
+      This app is based on the following Python libraries:
       - `streamlit`
       - `pandas`
       - `rdkit`
       - `padelpy`
     ''')
-  st.info('T. Lerksuthirat, S. Chitphuk, W. Stitchantrakul, D. Dejsuphong, A.A. Malik, C. Nantasenamat, PARP1PRED: A web server for screening the bioactivity of inhibitors against DNA repair enzyme PARP-1, ***EXCLI Journal*** (2023) DOI: https://doi.org/10.17179/excli2022-5602.')
+  #st.info('T. Lerksuthirat, S. Chitphuk, W. Stitchantrakul, D. Dejsuphong, A.A. Malik, C. Nantasenamat, PARP1PRED: A web server for screening the bioactivity of inhibitors against DNA repair enzyme PARP-1, ***EXCLI Journal*** (2023) DOI: https://doi.org/10.17179/excli2022-5602.')
   
   with st.expander('About this app'):
     st.markdown('''
