@@ -15,14 +15,14 @@ st.set_page_config(
 
 # Session state
 if 'smiles_input' not in st.session_state:
-  st.session_state.smiles_input = ''
+  st.session_state.smiles_input = 'O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1'
 
 # Utilities
 if os.path.isfile('molecule.smi'):
   os.remove('molecule.smi') 
   
-def insert_example_smiles():
-    st.session_state.smiles_input = 'O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1'
+#def insert_example_smiles():
+#    st.session_state.smiles_input = 'O=C(c1cc(Cc2n[nH]c(=O)c3ccccc23)ccc1F)N1CCN(C(=O)C2CC2)CC1'
 def clear_smiles():
     st.session_state.smiles_input = ''
 
@@ -31,7 +31,7 @@ st.title('💊 PARP1pred app')
 
 tab1,tab2,tab3,tab4,tab5,tab6,tab7 = st.tabs(['Main', 'About', 'What is PARP1?', 'Dataset', 'Model performance', 'Python libraries', 'Citing us'])
 
-st.button('Example input', on_click=insert_example_smiles)
+#st.button('Example input', on_click=insert_example_smiles)
 
 with tab1:
   if st.session_state.smiles_input == '':
