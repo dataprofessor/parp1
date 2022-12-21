@@ -46,7 +46,7 @@ with tab1:
     st.subheader('⚛️ Input molecule:')
     with st.expander('Show SMILES'):
       #st.write('**SMILES**')
-      st.write(smiles_txt)
+      st.text(smiles_txt)
       
     with st.expander('Show chemical structures'):
       #st.write('**Chemical structure**')
