@@ -40,7 +40,7 @@ with tab1:
 
       smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
       st.session_state.smiles_input = smiles_txt
-      st.button('Example input', on_click=insert_example_smiles)
+      #st.button('Example input', on_click=insert_example_smiles)
       submit_button = st.form_submit_button('Submit')
 
       if submit_button:
