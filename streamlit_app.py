@@ -44,12 +44,12 @@ with tab1:
     st.button('Example input', on_click=insert_example_smiles)
     st.button('Clear input', on_click=clear_smiles)
   else:
-    st.subheader('⚛️ Input molecule:')
+    st.subheader('⚛️ Input molecule:', expanded=True)
     with st.expander('Show SMILES'):
       #st.write('**SMILES**')
       st.text(st.session_state.smiles_input)
       
-    with st.expander('Show chemical structures'):
+    with st.expander('Show chemical structures', expanded=True):
       #st.write('**Chemical structure**')
       smi = Chem.MolFromSmiles(st.session_state.smiles_input)
       Chem.Draw.MolToFile(smi, 'molecule.png', width=900)
