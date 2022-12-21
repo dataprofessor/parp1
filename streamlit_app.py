@@ -28,6 +28,7 @@ def clear_smiles():
 
 # The App    
 st.title('💊 PARP1pred app')
+st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
 
 tab1,tab2,tab3,tab4,tab5,tab6,tab7 = st.tabs(['Main', 'About', 'What is PARP1?', 'Dataset', 'Model performance', 'Python libraries', 'Citing us'])
 
@@ -37,8 +38,7 @@ with tab1:
   if st.session_state.smiles_input == '':
     
     with st.form('my_form'):
-      st.info('PARP1pred allow users to predict whether a query molecule is active/inactive towards the PARP1 target protein.')
-      st.subheader('Enter SMILES notation')
+      st.subheader('Predict PARP1 inhibitory activity')
 
       smiles_txt = st.text_input('Enter SMILES notation', st.session_state.smiles_input)
       st.session_state.smiles_input = smiles_txt
