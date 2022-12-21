@@ -42,6 +42,28 @@ if st.session_state.smiles_input == '':
   
   st.warning('Enter SMILES notation in the sidebar to proceed', icon='👈')
   
+  tab1, tab2, tab3, tab4 = st.tabs(['What is PARP1 and its importance', 'Dataset', 'Model performance', 'Python libraries'])
+  
+  with tab1:
+    st.header('What is PARP1 and its therapeutic importance')
+    st.write('Poly (ADP-ribose) polymerase-1 (PARP-1) is an enzyme that catalyzes the ADP-ribosylation of a specific protein and plays a vital role in DNA repair. It has become an attractive target as inhibition of PARP-1 causes a toxic accumulation of DNA double strand breaks in cancer cells, particularly those with BRCA1/2 deficiency, which are found in breast, ovarian, prostate, and pancreatic cancers.')
+  with tab2:
+    st.header('Dataset')
+    st.write('In our work, we retrieved a human PARP-1 biological dataset from the ChEMBL database. The data was curated, and we received a non-redundant set of 2,018 PARP-1 inhibitors, which were divided into 1,720 active and 298 inactive compounds.')
+  with tab3:
+    st.header('Model performance')
+    st.write('We selected PubChem as a molecular fingerprint and used a random forest with an oversampling approach to construct the best model. The Matthews correlation coefficients in training, cross-validation, and test sets were 1.00, 0.96, and 0.74, respectively.')
+  with tab4:
+    st.header('Python libraries')
+    st.markdown('''
+    This app is based on the following Python libraries:
+      - `streamlit`
+      - `pandas`
+      - `rdkit`
+      - `padelpy`
+    ''')
+  st.info('T. Lerksuthirat, S. Chitphuk, W. Stitchantrakul, D. Dejsuphong, A.A. Malik, C. Nantasenamat, PARP1PRED: A web server for screening the bioactivity of inhibitors against DNA repair enzyme PARP-1, ***EXCLI Journal*** (2023) DOI: https://doi.org/10.17179/excli2022-5602.')
+  
   with st.expander('About this app'):
     st.markdown('''
       #### What is PARP1 and its therapeutic importance
