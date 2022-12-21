@@ -119,7 +119,11 @@ with tab3:
   st.write('Poly (ADP-ribose) polymerase-1 (PARP-1) is an enzyme that catalyzes the ADP-ribosylation of a specific protein and plays a vital role in DNA repair. It has become an attractive target as inhibition of PARP-1 causes a toxic accumulation of DNA double strand breaks in cancer cells, particularly those with BRCA1/2 deficiency, which are found in breast, ovarian, prostate, and pancreatic cancers.')
 with tab4:
   st.header('Dataset')
-  st.write('In our work, we retrieved a human PARP-1 biological dataset from the ChEMBL database. The data was curated, and we received a non-redundant set of 2,018 PARP-1 inhibitors, which were divided into 1,720 active and 298 inactive compounds.')
+  st.write('''
+    In our work, we retrieved a human PARP-1 biological dataset from the ChEMBL database. The data was curated and resulted in a non-redundant set of 2,018 PARP-1 inhibitors, which can be divided into:
+    - 1,720 active compounds
+    - 298 inactive compounds
+    ''')
 with tab5:
   st.header('Model performance')
   st.write('We selected PubChem as a molecular fingerprint and used a random forest with an oversampling approach to construct the best model. The Matthews correlation coefficients in training, cross-validation, and test sets were 1.00, 0.96, and 0.74, respectively.')
