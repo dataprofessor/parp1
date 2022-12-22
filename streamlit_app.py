@@ -110,6 +110,9 @@ with tab1:
           st.error('Inactive')
         if pred == 1:
           st.success('Active')
+        reset_button = st.button('Reset')
+        if reset_button:
+          st.session_state.smiles_input = ''
       
 with tab2:
   coverimage = Image.open('PARP1pred.jpg')
