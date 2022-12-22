@@ -111,7 +111,7 @@ with tab1:
         if pred == 1:
           st.success('Active')
       
-      if st.button('Reset')
+      if st.button('Reset'):
         st.experimental_rerun()
         
 with tab2:
