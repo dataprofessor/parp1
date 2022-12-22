@@ -110,9 +110,7 @@ with tab1:
           st.error('Inactive')
         if pred == 1:
           st.success('Active')
-      
-    if st.button('Reset'):
-      st.experimental_rerun()
+
         
 with tab2:
   coverimage = Image.open('PARP1pred.jpg')
