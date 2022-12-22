@@ -110,7 +110,10 @@ with tab1:
           st.error('Inactive')
         if pred == 1:
           st.success('Active')
-     
+      
+      if st.button('Reset')
+        st.experimental_rerun()
+        
 with tab2:
   coverimage = Image.open('PARP1pred.jpg')
   st.image(coverimage)
@@ -139,6 +142,3 @@ with tab6:
 with tab7:
   st.markdown('T. Lerksuthirat, S. Chitphuk, W. Stitchantrakul, D. Dejsuphong, A.A. Malik, C. Nantasenamat, PARP1PRED: A web server for screening the bioactivity of inhibitors against DNA repair enzyme PARP-1, ***EXCLI Journal*** (2023) DOI: https://doi.org/10.17179/excli2022-5602.')
 
-reset_button = st.button('Reset')
-if reset_button:
-  st.session_state.smiles_input = ''
