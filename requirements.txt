@@ -3,4 +3,4 @@ pandas==1.2.5
 scikit-learn==1.0.2
 padelpy==0.1.10
 rdkit-pypi==2022.3.5
-pyxdameraulevenshtein
+numpy==1.23.2
