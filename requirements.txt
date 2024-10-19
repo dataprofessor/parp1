@@ -4,3 +4,4 @@ scikit-learn==1.0.2
 padelpy==0.1.10
 rdkit-pypi==2022.3.5
 numpy==1.23.2
+altair==4.2.0
