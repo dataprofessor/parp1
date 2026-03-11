@@ -1,6 +1,6 @@
 streamlit>=1.32.0
 pandas>=2.0.0
-scikit-learn>=1.3.0
+scikit-learn==1.0.2
 padelpy==0.1.10
 rdkit>=2023.9.1
 numpy>=1.24.0
